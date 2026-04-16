@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6C6CE5"/>
+      <stop offset="100%" stop-color="#2a2a6a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+  <g transform="translate(260,260)">
+    <rect x="0" y="0" width="560" height="360" rx="20" fill="#ffffff"/>
+    <polyline points="0,0 280,220 560,0" fill="none" stroke="#6C6CE5" stroke-width="10"/>
+    <polyline points="0,360 210,180" fill="none" stroke="#d7d7ec" stroke-width="6"/>
+    <polyline points="560,360 350,180" fill="none" stroke="#d7d7ec" stroke-width="6"/>
+  </g>
+  <g transform="translate(620,560)">
+    <path d="M100 0 L200 40 L200 130 Q200 210 100 260 Q0 210 0 130 L0 40 Z" fill="#44D7B6" stroke="#ffffff" stroke-width="8"/>
+    <polyline points="50,140 90,180 160,100" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="540" y="900" font-family="Rubik, Helvetica, sans-serif" font-size="60" font-weight="700" fill="#ffffff" text-anchor="middle">Email Threat Detection</text>
+  <text x="540" y="960" font-family="Rubik, Helvetica, sans-serif" font-size="34" fill="#d7d7ec" text-anchor="middle">SVM · RoBERTa · 92% Accuracy</text>
+</svg>

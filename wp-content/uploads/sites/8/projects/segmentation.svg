@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#44D7B6"/>
+      <stop offset="100%" stop-color="#6C6CE5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+  <g transform="translate(540,540)">
+    <circle r="280" fill="#ffffff"/>
+    <path d="M0,0 L0,-280 A280,280 0 0,1 266,-85 Z" fill="#FF4C60"/>
+    <path d="M0,0 L266,-85 A280,280 0 0,1 165,225 Z" fill="#FFD15C"/>
+    <path d="M0,0 L165,225 A280,280 0 0,1 -165,225 Z" fill="#44D7B6"/>
+    <path d="M0,0 L-165,225 A280,280 0 0,1 -266,-85 Z" fill="#6C6CE5"/>
+    <path d="M0,0 L-266,-85 A280,280 0 0,1 0,-280 Z" fill="#302f4e"/>
+    <circle r="90" fill="#ffffff"/>
+  </g>
+  <g fill="#FFD15C">
+    <circle cx="180" cy="260" r="18"/>
+    <circle cx="220" cy="220" r="14"/>
+    <circle cx="160" cy="320" r="12"/>
+    <circle cx="900" cy="820" r="18"/>
+    <circle cx="860" cy="860" r="14"/>
+    <circle cx="920" cy="880" r="12"/>
+  </g>
+  <text x="540" y="940" font-family="Rubik, Helvetica, sans-serif" font-size="60" font-weight="700" fill="#ffffff" text-anchor="middle">Customer Segmentation</text>
+  <text x="540" y="1000" font-family="Rubik, Helvetica, sans-serif" font-size="34" fill="#e6fff7" text-anchor="middle">K-Means · LTV · Tableau</text>
+</svg>

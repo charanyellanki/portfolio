@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF4C60"/>
+      <stop offset="100%" stop-color="#6C6CE5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+  <g transform="translate(200,260)">
+    <rect x="0" y="0" width="680" height="440" rx="22" fill="#ffffff"/>
+    <line x1="60" y1="380" x2="620" y2="380" stroke="#302f4e" stroke-width="4"/>
+    <line x1="60" y1="60" x2="60" y2="380" stroke="#302f4e" stroke-width="4"/>
+    <rect x="100" y="260" width="60" height="120" fill="#FFD15C"/>
+    <rect x="190" y="200" width="60" height="180" fill="#44D7B6"/>
+    <rect x="280" y="240" width="60" height="140" fill="#FFD15C"/>
+    <rect x="370" y="150" width="60" height="230" fill="#44D7B6"/>
+    <rect x="460" y="210" width="60" height="170" fill="#FFD15C"/>
+    <rect x="550" y="100" width="60" height="280" fill="#FF4C60"/>
+    <polyline points="130,260 220,200 310,240 400,150 490,210 580,100" fill="none" stroke="#302f4e" stroke-width="6" stroke-dasharray="10,8"/>
+  </g>
+  <text x="540" y="860" font-family="Rubik, Helvetica, sans-serif" font-size="60" font-weight="700" fill="#ffffff" text-anchor="middle">Demand Forecasting</text>
+  <text x="540" y="920" font-family="Rubik, Helvetica, sans-serif" font-size="34" fill="#ffe6ea" text-anchor="middle">Prophet · Python · Streamlit</text>
+</svg>
