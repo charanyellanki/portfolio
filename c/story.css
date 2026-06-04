@@ -48,7 +48,7 @@ body::after{
 /* ============================ HERO ============================ */
 .hero{position:relative;min-height:100vh;min-height:var(--hero-cap,100svh);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;}
 .hero-bg{position:absolute;inset:-8% 0 0 0;height:118%;z-index:-3;will-change:transform;}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 42%;}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 55%;}
 .hero-scrim{position:absolute;inset:0;z-index:-2;
   background:
     linear-gradient(180deg, rgba(8,6,5,.55) 0%, rgba(8,6,5,.12) 26%, rgba(8,6,5,.30) 58%, rgba(8,6,5,.92) 100%),
@@ -143,6 +143,27 @@ section.chapter{padding:clamp(72px,13vh,140px) 0;position:relative;}
 .g-tall{grid-column:span 2;}
 .g-sq{grid-column:span 3;aspect-ratio:1/1 !important;}
 
+/* portrait — one clear, friendly face high on the page */
+.portrait-shot{aspect-ratio:1/1;max-width:320px;margin:clamp(34px,6vw,52px) auto 0;border-radius:50%;overflow:hidden;}
+.portrait-shot img{border-radius:50%;}
+
+/* showreel video — local, muted+poster, tap to play with sound */
+.reel{aspect-ratio:16/9;margin-top:44px;background:#0a0807;}
+.reel .reel-video{width:100%;height:100%;object-fit:cover;display:block;background:#0a0807;}
+.reel .veil{position:absolute;inset:0;pointer-events:none;transition:opacity .35s;
+  background:radial-gradient(circle at 50% 46%, rgba(8,6,5,.26), rgba(8,6,5,.55));}
+.video-play{position:absolute;inset:0;margin:auto;width:74px;height:74px;border-radius:50%;z-index:4;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;
+  background:rgba(224,166,90,.94);color:#1a120b;box-shadow:0 12px 30px rgba(0,0,0,.5);
+  transition:transform .2s ease,background .2s ease;}
+.video-play::before{content:"";position:absolute;inset:-11px;border-radius:50%;border:1px solid rgba(224,166,90,.5);}
+.video-play svg{width:26px;height:26px;margin-left:3px;fill:currentColor;}
+.video-play:hover{transform:scale(1.07);background:var(--amber);}
+.video-play:focus-visible{outline:none;transform:scale(1.07);background:var(--amber);
+  box-shadow:0 0 0 3px rgba(224,166,90,.65),0 12px 30px rgba(0,0,0,.5);}
+.reel.is-playing .veil{opacity:0;}
+.reel.is-playing .video-play,.reel.is-playing .reel-cap{display:none;}
+
 /* partner / closing */
 .partner{position:relative;border-radius:18px;overflow:hidden;margin-top:8px;
   border:1px solid rgba(243,234,217,.12);background:var(--panel);
@@ -167,6 +188,22 @@ section.chapter{padding:clamp(72px,13vh,140px) 0;position:relative;}
 .chip svg{width:100%;height:100%;stroke:currentColor;fill:none;}
 .chip b{color:var(--amber);font-weight:700;}
 .foot-note{font-size:11px;letter-spacing:1px;color:rgba(205,191,168,.5);text-transform:uppercase;}
+
+/* ===================== scene interludes (full-bleed parallax photo bands) ===================== */
+.scene{position:relative;min-height:clamp(360px,60vh,600px);display:flex;align-items:center;justify-content:center;
+  overflow:hidden;isolation:isolate;text-align:center;}
+.scene-bg{position:absolute;inset:0;height:100%;z-index:-3;will-change:transform;}
+.scene-bg img{width:100%;height:100%;object-fit:cover;object-position:center 70%;}
+.scene-scrim{position:absolute;inset:0;z-index:-2;
+  background:
+    radial-gradient(120% 100% at 50% 50%, rgba(8,6,5,.30), rgba(8,6,5,.64)),
+    linear-gradient(180deg, rgba(8,6,5,.58) 0%, rgba(8,6,5,.32) 42%, rgba(8,6,5,.42) 60%, rgba(8,6,5,.80) 100%);}
+.scene-inner{position:relative;max-width:min(620px,84vw);padding:clamp(40px,8vh,90px) clamp(24px,6vw,48px);}
+.scene-quote{font-family:'Fraunces';font-style:italic;font-weight:360;font-size:clamp(22px,4.6vw,40px);line-height:1.32;
+  color:#fff;letter-spacing:-.2px;text-shadow:0 4px 30px rgba(0,0,0,.55);}
+.scene-quote em{color:var(--amber);font-style:italic;}
+.scene-tag{display:inline-block;margin-top:18px;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink-soft);}
+.scene-tag::before{content:"";display:inline-block;width:18px;height:1px;background:var(--amber);vertical-align:middle;margin-right:8px;}
 
 /* ===================== reveal animation ===================== */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);}
@@ -197,10 +234,40 @@ section.chapter{padding:clamp(72px,13vh,140px) 0;position:relative;}
   body{background:#0a0807;}
 }
 
+/* ===================== large screens: use the full width =====================
+   Text keeps a comfortable reading measure, but rich sections spread out and
+   go two-column so a laptop doesn't just show a phone-width column. Same
+   content as mobile — only the arrangement changes. */
+
+/* editorial two-column blocks (kick in once there's room for two columns) */
+@media (min-width:920px){
+  .editorial{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(40px,5vw,72px);align-items:start;}
+  .editorial .portrait-shot{margin-top:0;max-width:340px;}        /* intro: text + face side by side */
+  .editorial .numbers{grid-template-columns:1fr;gap:0;margin-top:4px;}  /* journey: numbers become a tidy rail */
+  .editorial .num{padding:18px 0;}
+  .editorial .num:first-child{padding-top:0;}
+
+  .editorial-partner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,5vw,64px);align-items:center;}
+  .editorial-partner .partner{margin-top:0;}
+  .editorial-partner .ed-foot{grid-column:1 / -1;margin-top:6px;}
+}
+
+/* widen the overall frame on real desktops */
+@media (min-width:1080px){
+  :root{--wrap:1040px;}
+  section.chapter{padding:clamp(90px,12vh,150px) 0;}
+  /* pure-text / single-media interludes read better held to a tighter, centered measure */
+  .ordinary .wrap,.reel-section .wrap{max-width:940px;margin-inline:auto;}
+}
+@media (min-width:1440px){
+  :root{--wrap:1140px;}
+  .hero h1{font-size:clamp(84px,7.2vw,116px);}
+}
+
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto;}
   .reveal{opacity:1;transform:none;transition:none;}
   .cue i::after{animation:none;}
-  .hero-bg{position:absolute;transform:none !important;}
+  .hero-bg,.scene-bg{position:absolute;transform:none !important;}
   .tilt{transition:none;}
 }
